@@ -1,0 +1,15 @@
+services:
+  mongodb:
+    image: mongo:5
+    container_name: mongodb-container
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+    volumes:
+      - MONGO_DATA:/data/db
+    ports:
+      - 27017:27017
+    command: mongod
+
+volumes:
+  MONGO_DATA:

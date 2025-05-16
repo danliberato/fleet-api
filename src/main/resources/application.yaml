@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: inter-api
+
+  data:
+    mongodb:
+      database: ${DB_NAME:Fleet}
+      uri: ${DB_CONNECTION_STRING:mongodb://localhost:27017/${spring.data.mongodb.database}}

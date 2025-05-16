@@ -1,0 +1,52 @@
+package com.example.interapi.domain.dto.vehicle;
+
+import com.example.interapi.domain.dto.route.Route;
+import com.example.interapi.domain.dto.driver.Driver;
+import lombok.Getter;
+import lombok.Setter;
+import java.time.LocalDate;
+
+@Getter
+@Setter
+public class Vehicle {
+
+    private String id;
+    private String model;
+    private String brand;
+    private String registrationNumber;
+    private String licensePlate;
+    private Driver driver;
+    private Route route;
+    private VehicleStatus status;
+    
+    // Vehicle specifications
+    private int year;
+    private String color;
+    private String fuelType;
+    
+    // Dimensions and capacity
+    private double weightKg;
+    private double lengthMeters;
+    private double widthMeters;
+    private double heightMeters;
+    private int seatingCapacity;
+    private double cargoCapacityKg;
+    private double cargoVolumeM3;
+    
+    // Tracking and telemetry
+    private double odometerReadingKm;
+    private LocalDate lastMaintenanceDate;
+    private LocalDate nextMaintenanceDate;
+
+    private VehicleType vehicleType; // e.g., truck, van, car, motorcycle
+    
+    // Compliance and documentation
+    private LocalDate registrationExpiryDate;
+    private LocalDate insuranceExpiryDate;
+    private boolean isActive;
+    
+    // Performance and analytics
+    private double totalDistanceTraveledKm;
+    private int totalTripsCompleted;
+    private double maintenanceCostToDate;
+}
