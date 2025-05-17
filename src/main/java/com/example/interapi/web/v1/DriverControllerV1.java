@@ -27,7 +27,7 @@ public interface DriverControllerV1 {
             @PathVariable String id);
 
     @DeleteMapping(ApiRestConstants.DRIVERS_ID)
-    ResponseEntity<Driver> deleteDriver(
+    ResponseEntity<Void> deleteDriver(
             @RequestHeader(value = ApiRestConstants.COUNTRY_CODE_HEADER) final String countryCode,
             @RequestHeader(value = ApiRestConstants.REQUEST_ID_HEADER) final String requestId,
             @PathVariable String id);
