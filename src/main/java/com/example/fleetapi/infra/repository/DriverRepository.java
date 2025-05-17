@@ -1,6 +1,6 @@
-package com.example.interapi.infra.repository;
+package com.example.fleetapi.infra.repository;
 
-import com.example.interapi.domain.dto.driver.Driver;
+import com.example.fleetapi.domain.dto.driver.Driver;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

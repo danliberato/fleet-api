@@ -1,0 +1,23 @@
+package com.example.fleetapi.infra.repository;
+
+import com.example.fleetapi.domain.dto.driver.Driver;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
+import org.springframework.stereotype.Repository;
+
+import java.util.UUID;
+
+@Repository
+public class DriverRepositoryCustomImpl implements DriverRepositoryCustom {
+
+    MongoTemplate mongoTemplate;
+    @Override
+    public void deleteDriver(UUID uuid) {
+        Query query = new Query(Criteria.where("id").is(uuid));
+        Update update = new Update().set("active", false);
+        mongoTemplate.updateFirst(query, update, Driver.class);
+
+    }
+}
