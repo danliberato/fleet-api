@@ -1,4 +1,4 @@
-package com.example.interapi.infra.config.database;
+package com.example.fleetapi.infra.config.database;
 
 import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 import org.springframework.context.annotation.Bean;

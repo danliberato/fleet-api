@@ -1,4 +1,4 @@
-package com.example.interapi.infra;
+package com.example.fleetapi.infra;
 
 public final class ApiRestConstants {
 

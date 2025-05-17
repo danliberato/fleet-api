@@ -1,4 +1,4 @@
-package com.example.interapi.domain.dto.vehicle;
+package com.example.fleetapi.domain.dto.vehicle;
 
 public enum VehicleType {
     CAR,

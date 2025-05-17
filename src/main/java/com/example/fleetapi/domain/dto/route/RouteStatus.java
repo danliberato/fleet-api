@@ -1,4 +1,4 @@
-package com.example.interapi.domain.dto.route;
+package com.example.fleetapi.domain.dto.route;
 
 /**
  * Enum representing the possible statuses of a route in the Fleet Hub application.

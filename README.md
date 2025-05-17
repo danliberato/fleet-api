@@ -1,4 +1,4 @@
-# Inter API - Fleet Hub Application
+# Fleet API - Fleet Hub Application
 
 This application provides a comprehensive API for managing a fleet of vehicles, drivers, and routes.
 

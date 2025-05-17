@@ -1,4 +1,4 @@
-package com.example.interapi.domain.dto.driver;
+package com.example.fleetapi.domain.dto.driver;
 
 import lombok.Getter;
 import lombok.Setter;

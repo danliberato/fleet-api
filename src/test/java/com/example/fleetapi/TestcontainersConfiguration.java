@@ -1,4 +1,4 @@
-package com.example.interapi;
+package com.example.fleetapi;
 
 import org.springframework.boot.test.context.TestConfiguration;
 

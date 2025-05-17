@@ -1,4 +1,4 @@
-package com.example.interapi.infra.config.database;
+package com.example.fleetapi.infra.config.database;
 
 import org.bson.Document;
 import org.springframework.boot.actuate.data.mongo.MongoHealthIndicator;

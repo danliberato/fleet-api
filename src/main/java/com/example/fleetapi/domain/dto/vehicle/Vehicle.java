@@ -1,7 +1,7 @@
-package com.example.interapi.domain.dto.vehicle;
+package com.example.fleetapi.domain.dto.vehicle;
 
-import com.example.interapi.domain.dto.route.Route;
-import com.example.interapi.domain.dto.driver.Driver;
+import com.example.fleetapi.domain.dto.route.Route;
+import com.example.fleetapi.domain.dto.driver.Driver;
 import lombok.Getter;
 import lombok.Setter;
 import java.time.LocalDate;

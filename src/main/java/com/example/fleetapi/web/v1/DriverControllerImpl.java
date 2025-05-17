@@ -1,10 +1,10 @@
-package com.example.interapi.web.v1;
+package com.example.fleetapi.web.v1;
 
-import com.example.interapi.domain.dto.driver.AddDriverRequest;
-import com.example.interapi.domain.dto.driver.Driver;
-import com.example.interapi.usecase.driver.AddDriverUseCase;
-import com.example.interapi.usecase.driver.DeleteDriverUseCase;
-import com.example.interapi.usecase.driver.FindDriverUseCase;
+import com.example.fleetapi.domain.dto.driver.AddDriverRequest;
+import com.example.fleetapi.domain.dto.driver.Driver;
+import com.example.fleetapi.usecase.driver.AddDriverUseCase;
+import com.example.fleetapi.usecase.driver.DeleteDriverUseCase;
+import com.example.fleetapi.usecase.driver.FindDriverUseCase;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;

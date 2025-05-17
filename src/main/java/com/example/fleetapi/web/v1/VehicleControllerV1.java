@@ -1,7 +1,7 @@
-package com.example.interapi.web.v1;
+package com.example.fleetapi.web.v1;
 
-import com.example.interapi.domain.dto.vehicle.Vehicle;
-import com.example.interapi.infra.ApiRestConstants;
+import com.example.fleetapi.domain.dto.vehicle.Vehicle;
+import com.example.fleetapi.infra.ApiRestConstants;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
