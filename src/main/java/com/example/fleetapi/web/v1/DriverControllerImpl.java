@@ -1,5 +1,6 @@
 package com.example.interapi.web.v1;
 
+import com.example.interapi.domain.dto.driver.AddDriverRequest;
 import com.example.interapi.domain.dto.driver.Driver;
 import com.example.interapi.usecase.driver.AddDriverUseCase;
 import com.example.interapi.usecase.driver.DeleteDriverUseCase;
@@ -33,7 +34,6 @@ public class DriverControllerImpl implements DriverControllerV1 {
 
     @Override
     public ResponseEntity<Driver> getDriver(String countryCode, String requestId, String id) {
-
         Driver driver = findDriverUseCase.findDriverById(id);
         return ResponseEntity.status(200).body(driver);
     }
@@ -46,9 +46,9 @@ public class DriverControllerImpl implements DriverControllerV1 {
     }
 
     @Override
-    public ResponseEntity<Driver> addDriver(String countryCode, String requestId, Driver driver) {
-        addDriverUseCase.addDriver(driver);
-        return null;
+    public ResponseEntity<Driver> addDriver(String countryCode, String requestId, AddDriverRequest addDriverRequest) {
+        Driver driver = addDriverUseCase.addDriver(addDriverRequest.toDriver());
+        return ResponseEntity.status(201).body(driver);
     }
 
     @Override

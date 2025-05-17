@@ -1,8 +1,8 @@
-package com.example.interapi.usecase.driver;
+package com.example.fleetapi.usecase.driver;
 
 
-import com.example.interapi.domain.dto.driver.Driver;
-import com.example.interapi.infra.repository.DriverRepository;
+import com.example.fleetapi.domain.dto.driver.Driver;
+import com.example.fleetapi.infra.repository.DriverRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;

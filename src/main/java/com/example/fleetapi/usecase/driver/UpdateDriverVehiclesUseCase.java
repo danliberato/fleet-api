@@ -1,4 +1,4 @@
-package com.example.interapi.usecase.driver;
+package com.example.fleetapi.usecase.driver;
 
 public class UpdateDriverVehiclesUseCase {
 

@@ -1,11 +1,10 @@
-package com.example.interapi.usecase.driver;
+package com.example.fleetapi.usecase.driver;
 
-import com.example.interapi.domain.dto.driver.Driver;
-import com.example.interapi.domain.exceptions.DriverNotFoundException;
-import com.example.interapi.infra.repository.DriverRepository;
+import com.example.fleetapi.domain.dto.driver.Driver;
+import com.example.fleetapi.domain.exceptions.DriverNotFoundException;
+import com.example.fleetapi.infra.repository.DriverRepository;
 import org.springframework.stereotype.Component;
 
-import java.util.Optional;
 import java.util.UUID;
 
 @Component
@@ -19,10 +18,10 @@ public class DeleteDriverUseCase {
     }
 
     public void deleteDriver(String id) {
-        Driver driver = driverRepository.findDriverByActiveAndId(true, UUID.fromString(id));
+        UUID driverId = UUID.fromString(id);
+        Driver driver = driverRepository.findDriverByActiveAndId(true, driverId);
         validateDriver(driver);
-        driver.setDeleted(true);
-        driverRepository.updateDriver(driver);
+        driverRepository.deleteDriver(driverId);
     }
 
     private static void validateDriver(Driver driver) {

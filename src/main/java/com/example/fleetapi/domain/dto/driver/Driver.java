@@ -1,6 +1,7 @@
 package com.example.interapi.domain.dto.driver;
 
 import com.example.interapi.domain.dto.vehicle.Vehicle;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
@@ -21,4 +22,7 @@ public class Driver {
     private boolean isActive;
     private boolean isDeleted;
     private List<Vehicle> vehicles;
+
+    public Driver() {
+    }
 }

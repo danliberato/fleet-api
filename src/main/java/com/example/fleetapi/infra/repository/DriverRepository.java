@@ -10,7 +10,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import java.util.UUID;
 
 @RepositoryRestResource(collectionResourceRel = "drivers", path = "drivers")
-public interface DriverRepository extends MongoRepository<Driver, String> {
+public interface DriverRepository extends MongoRepository<Driver, String>, DriverRepositoryCustom {
 
     Driver findByDocumentNumber(String documentNumber);
 
@@ -18,7 +18,5 @@ public interface DriverRepository extends MongoRepository<Driver, String> {
 
     @NotNull
     Page<Driver> findAll(@NotNull Pageable pageable);
-
-    Driver updateDriver(Driver driver);
 
 }
