@@ -1,4 +1,4 @@
-package com.example.interapi.domain.exceptions;
+package com.example.fleetapi.domain.exceptions;
 
 import lombok.Getter;
 import org.apache.logging.log4j.LogManager;

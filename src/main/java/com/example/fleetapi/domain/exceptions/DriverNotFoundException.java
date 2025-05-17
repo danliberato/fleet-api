@@ -1,4 +1,4 @@
-package com.example.interapi.domain.exceptions;
+package com.example.fleetapi.domain.exceptions;
 
 public class DriverNotFoundException extends DomainException {
     public DriverNotFoundException() {
