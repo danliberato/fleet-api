@@ -14,15 +14,4 @@ public class AddDriverRequest {
     private String email;
     private String phoneNumber;
     private String birthDate;
-
-    public Driver toDriver() {
-        Driver driver = new Driver();
-        driver.setId(UUID.randomUUID().toString());
-        driver.setName(name);
-        driver.setDocumentNumber(documentNumber);
-        driver.setEmail(email);
-        driver.setPhoneNumber(phoneNumber);
-        driver.setBirthDate(birthDate);
-        return driver;
-    }
 }
