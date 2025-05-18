@@ -5,7 +5,9 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.LastModifiedDate;
 
+import java.time.OffsetDateTime;
 import java.util.List;
 
 @NoArgsConstructor
@@ -21,9 +23,15 @@ public class Driver {
     private String documentNumber;
     private String email;
     private String phoneNumber;
+    //Todo: Change to LocalDate
     private String birthDate;
     private boolean active;
     private boolean deleted;
     private List<Vehicle> vehicles;
+
+    // Timestamps
+    private String createdAt;
+    @LastModifiedDate
+    private String updatedAt;
 
 }

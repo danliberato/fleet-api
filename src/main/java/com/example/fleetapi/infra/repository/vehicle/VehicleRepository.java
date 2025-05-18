@@ -15,6 +15,8 @@ public interface VehicleRepository extends MongoRepository<Vehicle, String>, Veh
 
     Vehicle findByLicensePlate(String licensePlate);
 
+    Vehicle findByRegistrationNumber(String registrationNumber);
+
     @NotNull
     Page<Vehicle> findVehicleByDriver(@NotNull Driver driver, @NotNull Pageable pageable);
 

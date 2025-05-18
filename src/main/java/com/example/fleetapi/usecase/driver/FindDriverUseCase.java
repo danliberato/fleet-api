@@ -2,13 +2,11 @@ package com.example.fleetapi.usecase.driver;
 
 
 import com.example.fleetapi.domain.dto.driver.Driver;
-import com.example.fleetapi.domain.exceptions.DriverNotFoundException;
+import com.example.fleetapi.domain.exceptions.driver.DriverNotFoundException;
 import com.example.fleetapi.infra.repository.driver.DriverRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
-
-import java.util.Optional;
 
 @Component
 public class FindDriverUseCase{

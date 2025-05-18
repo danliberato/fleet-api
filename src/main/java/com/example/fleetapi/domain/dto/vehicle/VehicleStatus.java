@@ -23,29 +23,10 @@ public enum VehicleStatus {
      * Vehicle is undergoing maintenance
      */
     MAINTENANCE,
-    
-    /**
-     * Vehicle is out of service due to repairs
-     */
-    REPAIR,
-    
+
     /**
      * Vehicle is out of service
      */
     OUT_OF_SERVICE,
-    
-    /**
-     * Vehicle is idle but assigned
-     */
-    IDLE,
-    
-    /**
-     * Vehicle is fueling
-     */
-    FUELING,
-    
-    /**
-     * Vehicle is reserved for future use
-     */
-    RESERVED
+
 }

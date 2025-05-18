@@ -2,8 +2,8 @@ package com.example.fleetapi.usecase.driver;
 
 import com.example.fleetapi.domain.dto.driver.Driver;
 import com.example.fleetapi.domain.dto.vehicle.Vehicle;
-import com.example.fleetapi.domain.exceptions.DriverInRouteException;
-import com.example.fleetapi.domain.exceptions.DriverNotFoundException;
+import com.example.fleetapi.domain.exceptions.driver.DriverInRouteException;
+import com.example.fleetapi.domain.exceptions.driver.DriverNotFoundException;
 import com.example.fleetapi.infra.repository.driver.DriverRepository;
 import com.example.fleetapi.infra.repository.vehicle.VehicleRepository;
 import org.springframework.stereotype.Component;
@@ -36,7 +36,6 @@ public class DeleteDriverUseCase {
         //ToDo: check if driver is assigned to any route
         //ToDo: check if driver's vehicles are assigned to any route
         //Check if driver's vehicles are in status = IN_USE
-//        Vehicle v = vehicleRepository.findByDriverIdAndStatus(driver.getId(), "IN_USE");
         List<Vehicle> vehicleList = vehicleRepository.findByDriver(driver);
         if (!vehicleList.isEmpty()) {
             throw (new DriverInRouteException());

@@ -1,6 +1,6 @@
 package com.example.fleetapi.domain.rest;
 
-import com.example.fleetapi.domain.dto.driver.Driver;
+import com.example.fleetapi.domain.dto.vehicle.Vehicle;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,15 +16,13 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class DriverResponse<T> {
+public class VehicleResponse<T> {
     private String message;
     private int code;
     private T data;
-    private long elements;
-    private int totalPages;
 
-    public static ResponseEntity<DriverResponse<Driver>> success(Driver data) {
-        DriverResponse<Driver> response = DriverResponse.<Driver>builder()
+    public static ResponseEntity<VehicleResponse<Vehicle>> success(Vehicle data) {
+        VehicleResponse<Vehicle> response = VehicleResponse.<Vehicle>builder()
                 .message("Success")
                 .code(0)
                 .data(data)
@@ -32,19 +30,17 @@ public class DriverResponse<T> {
         return ResponseEntity.ok(response);
     }
 
-    public static ResponseEntity<DriverResponse<List<Driver>>> successList(List<Driver> data, long elements, int totalPages) {
-        DriverResponse<List<Driver>> response = DriverResponse.<List<Driver>>builder()
+    public static ResponseEntity<VehicleResponse<List<Vehicle>>> successList(List<Vehicle> data) {
+        VehicleResponse<List<Vehicle>> response = VehicleResponse.<List<Vehicle>>builder()
                 .message("Success")
                 .code(0)
-                .elements(elements)
-                .totalPages(totalPages)
                 .data(data)
                 .build();
         return ResponseEntity.ok(response);
     }
 
-    public static ResponseEntity<DriverResponse<Driver>> created(Driver data) {
-        DriverResponse<Driver> response = DriverResponse.<Driver>builder()
+    public static ResponseEntity<VehicleResponse<Vehicle>> created(Vehicle data) {
+        VehicleResponse<Vehicle> response = VehicleResponse.<Vehicle>builder()
                 .message("Success")
                 .code(0)
                 .data(data)
@@ -52,8 +48,8 @@ public class DriverResponse<T> {
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
-    public static ResponseEntity<DriverResponse<Driver>> successEmpty() {
-        DriverResponse<Driver> response = DriverResponse.<Driver>builder()
+    public static ResponseEntity<VehicleResponse<Vehicle>> successEmpty() {
+        VehicleResponse<Vehicle> response = VehicleResponse.<Vehicle>builder()
                 .message("Success")
                 .code(0)
                 .build();

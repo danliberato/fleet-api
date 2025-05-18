@@ -2,14 +2,13 @@ package com.example.fleetapi.web.v1;
 
 import com.example.fleetapi.domain.rest.AddDriverRequest;
 import com.example.fleetapi.domain.dto.driver.Driver;
-import com.example.fleetapi.domain.exceptions.DriverAlreadyExistsException;
 import com.example.fleetapi.domain.rest.DriverResponse;
 import com.example.fleetapi.usecase.driver.AddDriverUseCase;
 import com.example.fleetapi.usecase.driver.DeleteDriverUseCase;
 import com.example.fleetapi.usecase.driver.FindDriverUseCase;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,8 +31,8 @@ public class DriverControllerImpl implements DriverControllerV1 {
 
     @Override
     public ResponseEntity<DriverResponse<List<Driver>>> getAllDrivers(String countryCode, String requestId, String page, String pageSize) {
-        List<Driver> drivers = findDriverUseCase.findAllDrivers(page, pageSize).toList();
-        return DriverResponse.successList(drivers);
+        Page<Driver> currentPage = findDriverUseCase.findAllDrivers(page, pageSize);
+        return DriverResponse.successList(currentPage.toList(), currentPage.getTotalElements(), currentPage.getTotalPages());
     }
 
     @Override
