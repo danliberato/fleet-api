@@ -18,11 +18,12 @@ public class Vehicle {
     private Driver driver;
     private Route route;
     private VehicleStatus status;
+    private boolean isActive;
+    private boolean isDeleted;
     
     // Vehicle specifications
     private int year;
     private String color;
-    private String fuelType;
     
     // Dimensions and capacity
     private double weightKg;
@@ -43,7 +44,6 @@ public class Vehicle {
     // Compliance and documentation
     private LocalDate registrationExpiryDate;
     private LocalDate insuranceExpiryDate;
-    private boolean isActive;
     
     // Performance and analytics
     private double totalDistanceTraveledKm;

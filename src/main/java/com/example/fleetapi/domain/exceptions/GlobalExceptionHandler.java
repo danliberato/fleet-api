@@ -15,7 +15,7 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(ex.getIssue());
     }
 
-    @ExceptionHandler(DriverAssignedToRouteException.class)
+    @ExceptionHandler(DriverInRouteException.class)
     protected ResponseEntity<Issue> DriverInRoute(final DomainException ex) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getIssue());
     }

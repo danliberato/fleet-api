@@ -10,9 +10,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface DriverRepository extends MongoRepository<Driver, String>, DriverRepositoryCustom {
 
-    Driver findByDocumentNumber(String documentNumber);
+    Driver findByActiveAndDeletedAndDocumentNumber(boolean active, boolean deleted, String documentNumber);
 
-    Driver findDriverByActiveAndId(boolean active, String id);
+    Driver findDriverByActiveAndDeletedAndId(boolean active, boolean deleted, String id);
 
     @NotNull
     Page<Driver> findAll(@NotNull Pageable pageable);

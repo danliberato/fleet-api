@@ -22,8 +22,8 @@ public class Driver {
     private String email;
     private String phoneNumber;
     private String birthDate;
-    private boolean isActive;
-    private boolean isDeleted;
+    private boolean active;
+    private boolean deleted;
     private List<Vehicle> vehicles;
 
 }

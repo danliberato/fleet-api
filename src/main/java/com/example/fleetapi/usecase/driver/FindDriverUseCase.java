@@ -2,6 +2,7 @@ package com.example.fleetapi.usecase.driver;
 
 
 import com.example.fleetapi.domain.dto.driver.Driver;
+import com.example.fleetapi.domain.exceptions.DriverNotFoundException;
 import com.example.fleetapi.infra.repository.driver.DriverRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -21,12 +22,15 @@ public class FindDriverUseCase{
     }
 
     public Driver findDriverByDocument(String documentNumber) {
-        return driverRepository.findByDocumentNumber(documentNumber);
+        return driverRepository.findByActiveAndDeletedAndDocumentNumber(true, false, documentNumber);
     }
 
-    public Driver findDriverById(String id) {
-        Optional<Driver> optionalDriver = driverRepository.findById(id);
-        return optionalDriver.orElse(null);
+    public Driver findActiveDriverById(String id) {
+        Driver driver = driverRepository.findDriverByActiveAndDeletedAndId(true, false, id);
+        if (driver == null) {
+            throw new DriverNotFoundException();
+        }
+        return driver;
     }
 
     public Page<Driver> findAllDrivers(String page, String pageSize) {

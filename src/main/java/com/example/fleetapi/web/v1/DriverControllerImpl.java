@@ -38,7 +38,7 @@ public class DriverControllerImpl implements DriverControllerV1 {
 
     @Override
     public ResponseEntity<DriverResponse<Driver>> getDriver(String countryCode, String requestId, String id) {
-        Driver driver = findDriverUseCase.findDriverById(id);
+        Driver driver = findDriverUseCase.findActiveDriverById(id);
         return DriverResponse.success(driver);
     }
 

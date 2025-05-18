@@ -18,7 +18,7 @@ public class AddDriverUseCase {
     }
 
     public Driver addDriver(AddDriverRequest addDriverRequest) {
-        if(driverRepository.findByDocumentNumber(addDriverRequest.getDocumentNumber()) != null) {
+        if(driverRepository.findByActiveAndDeletedAndDocumentNumber(true, false, addDriverRequest.getDocumentNumber()) != null) {
             throw new DriverAlreadyExistsException("Driver with document number %s already exists".formatted(addDriverRequest.getDocumentNumber()));
         }
         Driver driver = Driver.builder()
@@ -28,8 +28,8 @@ public class AddDriverUseCase {
                 .name(addDriverRequest.getName())
                 .phoneNumber(addDriverRequest.getPhoneNumber())
                 .birthDate(addDriverRequest.getBirthDate())
-                .isActive(true)
-                .isDeleted(false)
+                .active(true)
+                .deleted(false)
                         .build();
         return driverRepository.save(driver);
 

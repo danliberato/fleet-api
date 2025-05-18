@@ -1,6 +1,6 @@
-package com.example.fleetapi.infra.repository.driver;
+package com.example.fleetapi.infra.repository.vehicle;
 
-import com.example.fleetapi.domain.dto.driver.Driver;
+import com.example.fleetapi.domain.dto.vehicle.Vehicle;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -8,19 +8,14 @@ import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class DriverRepositoryCustomImpl implements DriverRepositoryCustom {
+public class VehicleRepositoryCustomImpl implements VehicleRepositoryCustom {
 
     MongoTemplate mongoTemplate;
-
-    public DriverRepositoryCustomImpl(MongoTemplate mongoTemplate) {
-        this.mongoTemplate = mongoTemplate;
-    }
-
     @Override
-    public void deleteDriver(String id) {
+    public void deleteVehicle(String id) {
         Query query = new Query(Criteria.where("id").is(id));
         Update update = new Update().set("active", false).set("deleted", true);
-        mongoTemplate.updateFirst(query, update, Driver.class);
+        mongoTemplate.updateFirst(query, update, Vehicle.class);
 
     }
 }
