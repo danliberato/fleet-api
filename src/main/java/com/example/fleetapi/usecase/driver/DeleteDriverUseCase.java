@@ -5,7 +5,6 @@ import com.example.fleetapi.domain.exceptions.DriverNotFoundException;
 import com.example.fleetapi.infra.repository.DriverRepository;
 import org.springframework.stereotype.Component;
 
-import java.util.UUID;
 
 @Component
 public class DeleteDriverUseCase {
@@ -18,10 +17,9 @@ public class DeleteDriverUseCase {
     }
 
     public void deleteDriver(String id) {
-        UUID driverId = UUID.fromString(id);
-        Driver driver = driverRepository.findDriverByActiveAndId(true, driverId);
+        Driver driver = driverRepository.findDriverByActiveAndId(true, id);
         validateDriver(driver);
-        driverRepository.deleteDriver(driverId);
+        driverRepository.deleteDriver(id);
     }
 
     private static void validateDriver(Driver driver) {
