@@ -14,8 +14,8 @@ public class DriverRepositoryCustomImpl implements DriverRepositoryCustom {
 
     MongoTemplate mongoTemplate;
     @Override
-    public void deleteDriver(UUID uuid) {
-        Query query = new Query(Criteria.where("id").is(uuid));
+    public void deleteDriver(String id) {
+        Query query = new Query(Criteria.where("id").is(id));
         Update update = new Update().set("active", false);
         mongoTemplate.updateFirst(query, update, Driver.class);
 

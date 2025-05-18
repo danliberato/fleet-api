@@ -5,16 +5,14 @@ import org.jetbrains.annotations.NotNull;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.stereotype.Repository;
 
-import java.util.UUID;
-
-@RepositoryRestResource(collectionResourceRel = "drivers", path = "drivers")
+@Repository
 public interface DriverRepository extends MongoRepository<Driver, String>, DriverRepositoryCustom {
 
     Driver findByDocumentNumber(String documentNumber);
 
-    Driver findDriverByActiveAndId(boolean active, UUID id);
+    Driver findDriverByActiveAndId(boolean active, String id);
 
     @NotNull
     Page<Driver> findAll(@NotNull Pageable pageable);
