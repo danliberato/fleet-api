@@ -1,4 +1,4 @@
-package com.example.fleetapi.infra.repository;
+package com.example.fleetapi.infra.repository.driver;
 
 import com.example.fleetapi.domain.dto.driver.Driver;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -6,8 +6,6 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Repository;
-
-import java.util.UUID;
 
 @Repository
 public class DriverRepositoryCustomImpl implements DriverRepositoryCustom {

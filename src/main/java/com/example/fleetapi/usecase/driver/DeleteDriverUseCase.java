@@ -2,7 +2,7 @@ package com.example.fleetapi.usecase.driver;
 
 import com.example.fleetapi.domain.dto.driver.Driver;
 import com.example.fleetapi.domain.exceptions.DriverNotFoundException;
-import com.example.fleetapi.infra.repository.DriverRepository;
+import com.example.fleetapi.infra.repository.driver.DriverRepository;
 import org.springframework.stereotype.Component;
 
 

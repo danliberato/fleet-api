@@ -1,4 +1,4 @@
-package com.example.fleetapi.infra.repository;
+package com.example.fleetapi.infra.repository.driver;
 
 
 public interface DriverRepositoryCustom {

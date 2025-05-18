@@ -1,4 +1,4 @@
-package com.example.fleetapi.infra.repository;
+package com.example.fleetapi.infra.repository.driver;
 
 import com.example.fleetapi.domain.dto.driver.Driver;
 import org.jetbrains.annotations.NotNull;
