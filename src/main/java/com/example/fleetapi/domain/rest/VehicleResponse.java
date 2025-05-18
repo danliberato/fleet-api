@@ -20,6 +20,8 @@ public class VehicleResponse<T> {
     private String message;
     private int code;
     private T data;
+    private long elements;
+    private int totalPages;
 
     public static ResponseEntity<VehicleResponse<Vehicle>> success(Vehicle data) {
         VehicleResponse<Vehicle> response = VehicleResponse.<Vehicle>builder()
@@ -30,10 +32,12 @@ public class VehicleResponse<T> {
         return ResponseEntity.ok(response);
     }
 
-    public static ResponseEntity<VehicleResponse<List<Vehicle>>> successList(List<Vehicle> data) {
+    public static ResponseEntity<VehicleResponse<List<Vehicle>>> successList(List<Vehicle> data, long elements, int totalPages) {
         VehicleResponse<List<Vehicle>> response = VehicleResponse.<List<Vehicle>>builder()
                 .message("Success")
                 .code(0)
+                .elements(elements)
+                .totalPages(totalPages)
                 .data(data)
                 .build();
         return ResponseEntity.ok(response);
