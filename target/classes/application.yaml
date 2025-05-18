@@ -1,6 +1,6 @@
 spring:
   application:
-    name: inter-api
+    name: fleet-api
 
   data:
     mongodb:
