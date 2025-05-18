@@ -10,7 +10,8 @@ import java.util.IllegalFormatException;
 public enum IssueEnum {
     DRIVER_NOT_FOUND(1, "Driver not found"),
     DRIVER_IN_ROUTE(2, "Driver is in route"),
-    DRIVER_VEHICLE_IN_ROUTE(3, "Driver vehicle is in route")
+    DRIVER_VEHICLE_IN_ROUTE(3, "Driver vehicle is in route"),
+    DRIVER_ALREADY_EXISTS(4, "Driver already exists")
     ;
 
     private final Logger logger = LogManager.getLogger(IssueEnum.class);

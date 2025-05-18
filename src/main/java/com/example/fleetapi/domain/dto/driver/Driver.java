@@ -1,18 +1,22 @@
 package com.example.fleetapi.domain.dto.driver;
 
 import com.example.fleetapi.domain.dto.vehicle.Vehicle;
-import lombok.Getter;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+import lombok.*;
 import org.springframework.data.annotation.Id;
 
 import java.util.List;
-import java.util.UUID;
 
-@Getter
-@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder(toBuilder = true)
+@ToString
+@Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Driver {
 
-    @Id private UUID id;
+    @Id private String id;
     private String name;
     private String documentNumber;
     private String email;
@@ -22,6 +26,4 @@ public class Driver {
     private boolean isDeleted;
     private List<Vehicle> vehicles;
 
-    public Driver() {
-    }
 }
