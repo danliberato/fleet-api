@@ -4,7 +4,6 @@ package com.example.fleetapi.domain.exceptions;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
@@ -12,9 +11,18 @@ public class GlobalExceptionHandler {
 
 
     @ExceptionHandler(DriverAlreadyExistsException.class)
-    @ResponseStatus(value = HttpStatus.CONFLICT)
-    protected ResponseEntity<Issue> exceptionLogError(final DomainException ex) {
-        return ResponseEntity.badRequest().body(ex.getIssue());
+    protected ResponseEntity<Issue> DriverAlreadyExists(final DomainException ex) {
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(ex.getIssue());
+    }
+
+    @ExceptionHandler(DriverAssignedToRouteException.class)
+    protected ResponseEntity<Issue> DriverInRoute(final DomainException ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getIssue());
+    }
+
+    @ExceptionHandler(DriverNotFoundException.class)
+    protected ResponseEntity<Issue> DriverNotFound(final DomainException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getIssue());
     }
 
 
