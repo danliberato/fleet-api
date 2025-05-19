@@ -13,14 +13,7 @@ import java.util.List;
 @Repository
 public interface VehicleRepository extends MongoRepository<Vehicle, String>, VehicleRepositoryCustom {
 
-    Vehicle findByLicensePlate(String licensePlate);
+    Vehicle findDriverByActiveAndDeletedAndId(boolean active, boolean deleted, String id);
 
-    Vehicle findByRegistrationNumber(String registrationNumber);
-
-    @NotNull
-    Page<Vehicle> findVehicleByDriver(@NotNull Driver driver, @NotNull Pageable pageable);
-
-    Vehicle findVehicleById(String id);
-
-    List<Vehicle> findByDriver(Driver driver);
+    List<Vehicle> findByDriverId(String driver);
 }

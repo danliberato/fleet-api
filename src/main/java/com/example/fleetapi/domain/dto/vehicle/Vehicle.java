@@ -23,8 +23,7 @@ public class Vehicle {
     private String brand;
     private String registrationNumber;
     private String licensePlate;
-    private Driver driver;
-    private Route route;
+    private String driverId;
     private VehicleStatus status;
     private boolean active;
     private boolean deleted;

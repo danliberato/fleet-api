@@ -1,7 +1,9 @@
 package com.example.fleetapi.web.v1;
 
+import com.example.fleetapi.domain.dto.driver.Driver;
 import com.example.fleetapi.domain.dto.vehicle.Vehicle;
 import com.example.fleetapi.domain.rest.AddVehicleRequest;
+import com.example.fleetapi.domain.rest.DriverResponse;
 import com.example.fleetapi.domain.rest.VehicleResponse;
 import com.example.fleetapi.infra.ApiRestConstants;
 import org.springframework.http.ResponseEntity;
@@ -31,4 +33,10 @@ public interface VehicleControllerV1 {
             @RequestHeader(value = ApiRestConstants.COUNTRY_CODE_HEADER) final String countryCode,
             @RequestHeader(value = ApiRestConstants.REQUEST_ID_HEADER) final String requestId,
             @PathVariable String vehicleId);
+
+    @PatchMapping(ApiRestConstants.DRIVERS_ID_VEHICLES_ID)
+    ResponseEntity<VehicleResponse<Vehicle>> UpdateDriverVehicle(
+            @RequestHeader(value = ApiRestConstants.COUNTRY_CODE_HEADER) final String countryCode,
+            @RequestHeader(value = ApiRestConstants.REQUEST_ID_HEADER) final String requestId,
+            @PathVariable String driverId, @PathVariable String vehicleId);
 }

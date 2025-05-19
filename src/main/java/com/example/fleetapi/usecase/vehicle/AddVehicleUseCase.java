@@ -18,9 +18,6 @@ public class AddVehicleUseCase {
     }
 
     public Vehicle addVehicle(AddVehicleRequest addVehicleRequest) {
-//        if(AddVehicleUseCase.this.vehicleRepository.findByActiveAndDeletedAndDocumentNumber(true, false, addVehicleRequest.getDocumentNumber()) != null) {
-//            throw new VehicleAlreadyExistsException("Vehicle with license plate %s already exists".formatted(addVehicleRequest.getLicensePlate()));
-//        }
         Vehicle driver = Vehicle.builder()
                 .id(UUID.randomUUID().toString())
                 .licensePlate(addVehicleRequest.getLicensePlate())

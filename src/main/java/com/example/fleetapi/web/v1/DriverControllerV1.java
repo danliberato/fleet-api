@@ -44,9 +44,4 @@ public interface DriverControllerV1 {
             @RequestHeader(value = ApiRestConstants.REQUEST_ID_HEADER) final String requestId,
             @PathVariable String driverId);
 
-    @PatchMapping(ApiRestConstants.DRIVERS_ID_VEHICLES_ID)
-    ResponseEntity<DriverResponse<Driver>> UpdateDriverVehicle(
-            @RequestHeader(value = ApiRestConstants.COUNTRY_CODE_HEADER) final String countryCode,
-            @RequestHeader(value = ApiRestConstants.REQUEST_ID_HEADER) final String requestId,
-            @PathVariable String driverId, @PathVariable String vehicleId);
 }

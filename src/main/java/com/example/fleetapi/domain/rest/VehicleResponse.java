@@ -17,9 +17,9 @@ import java.util.List;
 @AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VehicleResponse<T> {
+    private T data;
     private String message;
     private int code;
-    private T data;
     private long elements;
     private int totalPages;
 

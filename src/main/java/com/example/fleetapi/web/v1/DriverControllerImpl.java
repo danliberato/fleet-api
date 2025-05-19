@@ -6,6 +6,7 @@ import com.example.fleetapi.domain.rest.DriverResponse;
 import com.example.fleetapi.usecase.driver.AddDriverUseCase;
 import com.example.fleetapi.usecase.driver.DeleteDriverUseCase;
 import com.example.fleetapi.usecase.driver.FindDriverUseCase;
+import com.example.fleetapi.usecase.vehicle.AssignVehicleToDriverUseCase;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -21,12 +22,14 @@ public class DriverControllerImpl implements DriverControllerV1 {
     private final AddDriverUseCase addDriverUseCase;
     private final FindDriverUseCase findDriverUseCase;
     private final DeleteDriverUseCase deleteDriverUseCase;
+    private final AssignVehicleToDriverUseCase assignVehicleToDriverUseCase;
 
     @Autowired
-    public DriverControllerImpl(AddDriverUseCase addDriverUseCase, FindDriverUseCase findDriverUseCase, DeleteDriverUseCase deleteDriverUseCase) {
+    public DriverControllerImpl(AddDriverUseCase addDriverUseCase, FindDriverUseCase findDriverUseCase, DeleteDriverUseCase deleteDriverUseCase, AssignVehicleToDriverUseCase assignVehicleToDriverUseCase) {
         this.addDriverUseCase = addDriverUseCase;
         this.findDriverUseCase = findDriverUseCase;
         this.deleteDriverUseCase = deleteDriverUseCase;
+        this.assignVehicleToDriverUseCase = assignVehicleToDriverUseCase;
     }
 
     @Override
@@ -60,9 +63,4 @@ public class DriverControllerImpl implements DriverControllerV1 {
         return null;
     }
 
-    @Override
-    public ResponseEntity<DriverResponse<Driver>> UpdateDriverVehicle(String countryCode, String requestId, String driverId, String vehicleId) {
-        // Implementation needed
-        return null;
-    }
 }

@@ -1,9 +1,12 @@
 package com.example.fleetapi.web.v1;
 
+import com.example.fleetapi.domain.dto.driver.Driver;
 import com.example.fleetapi.domain.dto.vehicle.Vehicle;
 import com.example.fleetapi.domain.rest.AddVehicleRequest;
+import com.example.fleetapi.domain.rest.DriverResponse;
 import com.example.fleetapi.domain.rest.VehicleResponse;
 import com.example.fleetapi.usecase.vehicle.AddVehicleUseCase;
+import com.example.fleetapi.usecase.vehicle.AssignVehicleToDriverUseCase;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 
@@ -13,9 +16,11 @@ import java.util.List;
 public class VehicleControllerV1Impl implements VehicleControllerV1 {
 
     private final AddVehicleUseCase addVehicleUseCase;
+    private final AssignVehicleToDriverUseCase assignVehicleToDriverUseCase;
 
-    public VehicleControllerV1Impl(AddVehicleUseCase addVehicleUseCase) {
+    public VehicleControllerV1Impl(AddVehicleUseCase addVehicleUseCase, AssignVehicleToDriverUseCase assignVehicleToDriverUseCase) {
         this.addVehicleUseCase = addVehicleUseCase;
+        this.assignVehicleToDriverUseCase = assignVehicleToDriverUseCase;
     }
 
     @Override
@@ -32,5 +37,11 @@ public class VehicleControllerV1Impl implements VehicleControllerV1 {
     @Override
     public ResponseEntity<VehicleResponse<Void>> deleteVehicle(String countryCode, String requestId, String vehicleId) {
         return null;
+    }
+
+    @Override
+    public ResponseEntity<VehicleResponse<Vehicle>> UpdateDriverVehicle(String countryCode, String requestId, String driverId, String vehicleId) {
+        Vehicle vehicle = this.assignVehicleToDriverUseCase.assignVehicleToDriver(driverId, vehicleId);
+        return VehicleResponse.success(vehicle);
     }
 }
