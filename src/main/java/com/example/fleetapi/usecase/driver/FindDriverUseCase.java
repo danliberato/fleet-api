@@ -24,7 +24,7 @@ public class FindDriverUseCase{
     }
 
     public Driver findActiveDriverById(String id) {
-        Driver driver = driverRepository.findDriverByActiveAndDeletedAndId(true, false, id);
+        Driver driver = driverRepository.findByActiveAndDeletedAndId(true, false, id);
         if (driver == null) {
             throw new DriverNotFoundException();
         }

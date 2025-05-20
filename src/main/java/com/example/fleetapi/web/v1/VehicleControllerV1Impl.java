@@ -1,9 +1,7 @@
 package com.example.fleetapi.web.v1;
 
-import com.example.fleetapi.domain.dto.driver.Driver;
 import com.example.fleetapi.domain.dto.vehicle.Vehicle;
 import com.example.fleetapi.domain.rest.AddVehicleRequest;
-import com.example.fleetapi.domain.rest.DriverResponse;
 import com.example.fleetapi.domain.rest.VehicleResponse;
 import com.example.fleetapi.usecase.vehicle.AddVehicleUseCase;
 import com.example.fleetapi.usecase.vehicle.AssignVehicleToDriverUseCase;

@@ -30,7 +30,7 @@ public class AssignVehicleToDriverUseCase {
      */
 
     public Vehicle assignVehicleToDriver(String driverId, String vehicleId) {
-        Driver driver = driverRepository.findDriverByActiveAndDeletedAndId(true, false, driverId);
+        Driver driver = driverRepository.findByActiveAndDeletedAndId(true, false, driverId);
         if (driver == null) {
             throw new DriverNotFoundException();
         }

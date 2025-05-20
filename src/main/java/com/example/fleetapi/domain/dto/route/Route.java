@@ -2,10 +2,18 @@ package com.example.fleetapi.domain.dto.route;
 
 import com.example.fleetapi.domain.dto.driver.Driver;
 import com.example.fleetapi.domain.dto.vehicle.Vehicle;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder(toBuilder = true)
+@ToString
+@Data
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Route {
 
     // Basic information
@@ -15,34 +23,19 @@ public class Route {
 
     // Location information
     private String originAddress;
-    private double originLatitude;
-    private double originLongitude;
     private String destinationAddress;
-    private double destinationLatitude;
-    private double destinationLongitude;
-    private List<String> waypointIds;  // For stops along the route
 
     // Timing information
-    private LocalDateTime scheduledDepartureTime;
-    private LocalDateTime scheduledArrivalTime;
-    private LocalDateTime actualDepartureTime;
-    private LocalDateTime actualArrivalTime;
+    private LocalDateTime departureTime;
+    private LocalDateTime finishTime;
 
-    // Distance and duration
-    private double distanceInKilometers;
-    private int estimatedDurationMinutes;
-    private int actualDurationMinutes;
+    // Route details
+    private List<RouteEvent> events;
 
     // Associated entities
     private Vehicle vehicle;
-    private Driver driver;
+    private String driverId;
 
-    // Status tracking
-    private RouteStatus status;
-
-    // Additional fleet management fields
-    private double fuelConsumptionEstimate;
-    private double co2EmissionsEstimate;
-
+    private RouteStatus lastStatus;
 }
 

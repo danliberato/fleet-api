@@ -2,12 +2,10 @@ package com.example.fleetapi.domain.dto.driver;
 
 import com.example.fleetapi.domain.dto.vehicle.Vehicle;
 import com.fasterxml.jackson.annotation.JsonInclude;
-
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
 
-import java.time.OffsetDateTime;
 import java.util.List;
 
 @NoArgsConstructor

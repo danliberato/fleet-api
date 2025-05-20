@@ -4,15 +4,17 @@ package com.example.fleetapi.domain.dto.route;
  * Enum representing the possible statuses of a route in the Fleet Hub application.
  */
 public enum RouteStatus {
+
     /**
-     * Route is planned but has not yet started
+     * Route has not yet been initiated
      */
     PLANNED,
-    
+
     /**
-     * Route is currently being executed
+     * Route has been initiated
      */
-    IN_PROGRESS,
+    STARTED,
+
     
     /**
      * Route has been completed successfully
@@ -23,26 +25,11 @@ public enum RouteStatus {
      * Route has been cancelled
      */
     CANCELLED,
-    
+
     /**
-     * Route is delayed from its original schedule
+     * Route has been rejected by the receiver
      */
-    DELAYED,
-    
-    /**
-     * Route is on hold temporarily
-     */
-    ON_HOLD,
-    
-    /**
-     * Route has been rescheduled to a different time
-     */
-    RESCHEDULED,
-    
-    /**
-     * Route has been diverted from its original path
-     */
-    DIVERTED,
+    REJECTED,
     
     /**
      * Route has encountered a problem

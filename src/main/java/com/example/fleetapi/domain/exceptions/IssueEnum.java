@@ -15,7 +15,9 @@ public enum IssueEnum {
     VEHICLE_NOT_FOUND(5, "Vehicle not found"),
     VEHICLE_IN_ROUTE(6, "Vehicle is in route"),
     VEHICLE_ALREADY_EXISTS(7, "Vehicle already exists"),
-    INVALID_DATE_FORMAT(8, "Invalid date format. Format must be yyyy-MM-dd")
+    INVALID_DATE_FORMAT(8, "Invalid date format. Format must be yyyy-MM-dd"),
+    ROUTE_NOT_FOUND(9, "Route not found for id %s"),
+    INVALID_ROUTE_STATUS_TRANSITION(10, "Invalid route status transition from %s to %s"),
     ;
 
     private final Logger logger = LogManager.getLogger(IssueEnum.class);

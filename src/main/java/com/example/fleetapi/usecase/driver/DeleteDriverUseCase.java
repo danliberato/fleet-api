@@ -25,7 +25,7 @@ public class DeleteDriverUseCase {
     }
 
     public void deleteDriver(String id) {
-        Driver driver = driverRepository.findDriverByActiveAndDeletedAndId(true, false, id);
+        Driver driver = driverRepository.findByActiveAndDeletedAndId(true, false, id);
         validateDriverDeletion(driver);
         driverRepository.deleteDriver(id);
     }

@@ -22,14 +22,12 @@ public class DriverControllerImpl implements DriverControllerV1 {
     private final AddDriverUseCase addDriverUseCase;
     private final FindDriverUseCase findDriverUseCase;
     private final DeleteDriverUseCase deleteDriverUseCase;
-    private final AssignVehicleToDriverUseCase assignVehicleToDriverUseCase;
 
     @Autowired
     public DriverControllerImpl(AddDriverUseCase addDriverUseCase, FindDriverUseCase findDriverUseCase, DeleteDriverUseCase deleteDriverUseCase, AssignVehicleToDriverUseCase assignVehicleToDriverUseCase) {
         this.addDriverUseCase = addDriverUseCase;
         this.findDriverUseCase = findDriverUseCase;
         this.deleteDriverUseCase = deleteDriverUseCase;
-        this.assignVehicleToDriverUseCase = assignVehicleToDriverUseCase;
     }
 
     @Override

@@ -12,7 +12,7 @@ public interface DriverRepository extends MongoRepository<Driver, String>, Drive
 
     Driver findByActiveAndDeletedAndDocumentNumber(boolean active, boolean deleted, String documentNumber);
 
-    Driver findDriverByActiveAndDeletedAndId(boolean active, boolean deleted, String id);
+    Driver findByActiveAndDeletedAndId(boolean active, boolean deleted, String id);
 
     @NotNull
     Page<Driver> findAll(@NotNull Pageable pageable);

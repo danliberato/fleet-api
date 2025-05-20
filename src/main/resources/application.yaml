@@ -6,3 +6,8 @@ spring:
     mongodb:
       database: ${DB_NAME:Fleet}
       uri: ${DB_CONNECTION_STRING:mongodb://localhost:27017/${spring.data.mongodb.database}}
+
+
+payments:
+  payout-rate: 0.1
+  max-multiplier: 10
